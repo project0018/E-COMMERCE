@@ -150,26 +150,23 @@ export default function ProductPage() {
             {currentUser ? (
               currentUser.role === 'seller' ? (
                   <Button
-                    className="px-4 py-2 rounded-lg mt-3 text-black text-3xl"
-                    gradientDuoTone="greenToBlue"
+                    className="px-4 py-2 rounded-lg mt-3 text-black text-3xl bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200"
                     onClick={handleAddToCart}
                     disabled>
-                    Add to Cart
+                    Buy Now
                   </Button>
                ) : (
                   <Button
-                   className="px-4 py-2 rounded-lg mt-3 text-black text-3xl"
-                   gradientDuoTone="greenToBlue"
+                   className="px-4 py-2 rounded-lg mt-3 text-black text-3xl bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200"
                    onClick={handleAddToCart}>
-                   Add to Cart
+                   Buy Now
                   </Button>
                 )
              ) : (
                <Button
-                className="px-4 py-2 rounded-lg mt-3 text-black text-3xl"
-                gradientDuoTone="greenToBlue"
+                className="px-4 py-2 rounded-lg mt-3 text-black text-3xl bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200"
                 disabled>
-                Add to Cart
+                Buy Now
               </Button>
              )}
             <ReviewSection productId={product?._id} />
@@ -189,7 +186,7 @@ export default function ProductPage() {
 
       {/* Modal */}
       <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <Modal.Header>Add to Cart</Modal.Header>
+        <Modal.Header>Buy Now</Modal.Header>
         <Modal.Body>
           <div>
             <Label htmlFor="quantity">Quantity</Label>
@@ -220,7 +217,7 @@ export default function ProductPage() {
           </div>
         </Modal.Body>
         <Modal.Footer className="flex justify-center">
-          <Button onClick={handleSubmit} gradientDuoTone="redToYellow">
+          <Button onClick={handleSubmit} className="bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 text-black">
             Submit
           </Button>
           <Button color="gray" onClick={() => setShowModal(false)}>

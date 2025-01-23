@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Label, Table } from "flowbite-react";
+import { Table } from "flowbite-react";
 import { Link } from "react-router-dom";
 
 export default function UserLists() {
@@ -27,47 +27,45 @@ export default function UserLists() {
     <div className="p-4 w-full">
       {users.length > 0 ? (
         <div className="overflow-x-auto">
-          <Table hoverable className="w-full border-collapse">
-            <Table.Head className="bg-transparent">
-              <Table.HeadCell className="bg-gray-600 text-white text-xl">Date Created</Table.HeadCell>
-              <Table.HeadCell className="bg-gray-600 text-white text-xl">User Image</Table.HeadCell>
-              <Table.HeadCell className="bg-gray-600 text-white text-xl">User Name</Table.HeadCell>
-              <Table.HeadCell className="bg-gray-600 text-white text-xl">Seller / Buyer</Table.HeadCell>
-            </Table.Head>
-            <Table.Body className="divide-y border border-b-3">
+          <table className="table-auto w-full border-collapse border border-gray-300 text-center">
+            <thead>
+              <tr className="bg-gray-600 text-white text-xl">
+                <th className="px-4 py-2">Date Created</th>
+                <th className="px-4 py-2">User Image</th>
+                <th className="px-4 py-2">User Name</th>
+                <th className="px-4 py-2">Seller / Buyer</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y">
               {users.map((user) => (
-                <Table.Row key={user._id} className="bg-transparent">
-                  <Table.Cell className="text-black text-2xl">
+                <tr key={user._id} className="bg-white">
+                  <td className="px-4 py-2 text-black text-2xl">
                     {new Date(user.updatedAt).toLocaleDateString()}
-                  </Table.Cell>
-                  <Table.Cell>
+                  </td>
+                  <td className="px-4 py-2">
                     <Link to={`/detail/${user._id}`}>
-                    <img
-                      src={user.profilePicture || "https://via.placeholder.com/150"}
-                      alt={user.username}
-                      className="w-16 h-16 object-cover rounded-full border border-gray-300"
-                    />
+                      <img
+                        src={user.profilePicture || "https://via.placeholder.com/150"}
+                        alt={user.username}
+                        className="w-16 h-16 object-cover rounded-full border border-gray-300"
+                      />
                     </Link>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Link to={`/detail/${user._id}`} className="text-2xl text-black flex items-center">
+                  </td>
+                  <td className="px-4 py-2 text-2xl text-black">
+                    <Link to={`/detail/${user._id}`} className="flex items-center justify-center">
                       {user.username}
                     </Link>
-                  </Table.Cell>
-                  <Table.Cell>
-                    {user.role === "seller" ? (
-                      <Label className="text-2xl">Seller</Label>
-                    ) : (
-                      <Label className="text-2xl">Buyer</Label>
-                    )}
-                  </Table.Cell>
-                </Table.Row>
+                  </td>
+                  <td className="px-4 py-2 text-2xl">
+                    {user.role === "seller" ? "Seller" : "Buyer"}
+                  </td>
+                </tr>
               ))}
-            </Table.Body>
-          </Table>
+            </tbody>
+          </table>
         </div>
       ) : (
-        <p>No Users Yet!</p>
+        <p className="text-center">No Users Yet!</p>
       )}
     </div>
   );

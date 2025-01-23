@@ -150,8 +150,7 @@ export default function ReviewSection({ productId }) {
         {200 - review.length} characters remaining
       </p>
       <Button
-        gradientDuoTone="tealToLime"
-        className="px-6 py-2 text-lg font-semibold transition-transform transform hover:scale-105 w-4 h-15 sm:h-fit sm:w-fit"
+        className="px-6 py-2 text-lg font-semibold transition-transform transform hover:scale-105 w-4 h-15 sm:h-fit sm:w-fit bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 text-black"
         type="submit">
         Submit
       </Button>
@@ -202,12 +201,12 @@ export default function ReviewSection({ productId }) {
             </h3>
             <div className='flex justify-center gap-4'>
               <Button
-                color='failure'
+                className='text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm text-center me-2 mb-2'
                 onClick={() => handleDelete(reviewToDelete)}
               >
                 Yes, I'm sure
               </Button>
-              <Button color='gray' onClick={() => setShowModal(false)}>
+              <Button color='gray' className='text-center' onClick={() => setShowModal(false)}>
                 No, cancel
               </Button>
             </div>

@@ -79,7 +79,7 @@ export default function Review({ review, onLike, onEdit, onDelete }) {
               <Button
                 type='button'
                 size='sm'
-                gradientDuoTone='purpleToBlue'
+                className='bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 text-black'
                 onClick={handleSave}
               >
                 Save
