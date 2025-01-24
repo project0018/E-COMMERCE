@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { app } from '../firebase';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 
-
 export default function DashProfile() {
 
   const { currentUser, error, loading } = useSelector(state => state.user);
@@ -168,9 +167,8 @@ const uploadImage = async () => {
         <TextInput id='contactno' type='text' placeholder='Contact No' defaultValue={currentUser.contactno} onChange={handleChange}/>
         <Button
           type="submit"
-          className="w-full rounded-full p-1" gradientDuoTone='purpleToBlue' disabled={loading}>
+          className="w-full rounded-full p-1 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300" disabled={loading}>
           {loading ? 'Loading...': 'Update the detail'}
-          
         </Button>
         {currentUser.role=="seller" && (
           <Link to={'/createproduct'}>

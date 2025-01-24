@@ -133,12 +133,13 @@ export default function ProjectSection({ projectId }) {
             <div>
               <Label>Project Image:</Label>
               <FileInput type="file" className="mt-1 w-full p-2" onChange={(e) => setFile(e.target.files[0])} />
-              <Button onClick={handleUploadImage} className="my-2">
+              <Button onClick={handleUploadImage} className="my-2 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200">
                 Upload Image
               </Button>
               {imageUploadProgress && <p>Uploading: {imageUploadProgress}%</p>}
               {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
               {project.image && <img src={project.image} alt="Project" className="w-full h-72 object-cover my-2" />}
+              <div className='flex flex-col'>
               <Label>Project Title:</Label>
               <TextInput
                 type="text"
@@ -147,6 +148,8 @@ export default function ProjectSection({ projectId }) {
                 onChange={(e) => setProject({ ...project, title: e.target.value })}
                 required
               />
+              </div>
+              <div className='flex flex-col'>
               <Label>Project Location:</Label>
               <TextInput
                 type="text"
@@ -155,6 +158,8 @@ export default function ProjectSection({ projectId }) {
                 onChange={(e) => setProject({ ...project, location: e.target.value })}
                 required
               />
+              </div>
+              <div className='flex flex-col'>
               <Label>Project Description:</Label>
               <Textarea
                 className="mt-1 w-full p-2 h-48"
@@ -162,11 +167,12 @@ export default function ProjectSection({ projectId }) {
                 onChange={(e) => setProject({ ...project, description: e.target.value })}
                 required
               />
+              </div>
               <div className="flex justify-between mt-4">
-                <Button gradientDuoTone="purpleToBlue" type="submit">
+                <Button className='text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300' type="submit">
                   Submit
                 </Button>
-                <Button gradientDuoTone="purpleToBlue" onClick={() => setShowModal(false)}>
+                <Button className='text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300' onClick={() => setShowModal(false)}>
                   Close
                 </Button>
               </div>

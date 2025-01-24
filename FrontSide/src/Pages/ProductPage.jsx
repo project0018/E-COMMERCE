@@ -150,21 +150,21 @@ export default function ProductPage() {
             {currentUser ? (
               currentUser.role === 'seller' ? (
                   <Button
-                    className="px-4 py-2 rounded-lg mt-3 text-black text-3xl bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200"
+                    className="px-4 py-2 rounded-lg mt-3 text-white text-3xl bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200"
                     onClick={handleAddToCart}
                     disabled>
                     Buy Now
                   </Button>
                ) : (
                   <Button
-                   className="px-4 py-2 rounded-lg mt-3 text-black text-3xl bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200"
+                   className="px-4 py-2 rounded-lg mt-3 text-white text-3xl bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200"
                    onClick={handleAddToCart}>
                    Buy Now
                   </Button>
                 )
              ) : (
                <Button
-                className="px-4 py-2 rounded-lg mt-3 text-black text-3xl bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200"
+                className="px-4 py-2 rounded-lg mt-3 text-white text-3xl bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200"
                 disabled>
                 Buy Now
               </Button>

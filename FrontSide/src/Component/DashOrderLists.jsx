@@ -297,7 +297,7 @@ export default function DashOrderLists() {
                 type="text"
                 value={selectedOrder.order.date}
               />
-              <Button className="m-auto mt-3" gradientDuoTone="greenToBlue" type="submit">Update Order List</Button>
+              <Button className="m-auto ml-60 mt-3 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 mt-3" gradientDuoTone="greenToBlue" type="submit">Update Order List</Button>
             </form>
             <form onSubmit={updateTransactionDetails}>
                 {selectedOrder.matchingTransaction && (
@@ -358,14 +358,14 @@ export default function DashOrderLists() {
                         }))
                       }
                     />
-                    <Button className="m-auto mt-3" gradientDuoTone="redToYellow" type="submit">Update Transaction</Button>
+                    <Button className="m-auto ml-60 mt-3 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200" type="submit">Update Transaction</Button>
                   </>
                 )}
               </form>
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={closeModal}>Close</Button>
+            <Button className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300" onClick={closeModal}>Close</Button>
           </Modal.Footer>
         </Modal>
       )}
