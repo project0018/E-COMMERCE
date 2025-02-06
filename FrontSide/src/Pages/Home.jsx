@@ -31,7 +31,7 @@ export default function Home() {
       </header>
 
       {/* Carousel */}
-      <div className="w-full p-5 h-[450px] sm:h-[300px] lg:h-[550px] 2xl:h-[650px] mb-12">
+      <div className="w-full p-5 h-[550px] sm:h-[400px] lg:h-[650px] 2xl:h-[750px] mb-12">
         <Carousel>
           <img
             src="https://us.123rf.com/450wm/ideyweb/ideyweb1503/ideyweb150300025/37771784-flat-design-vector-concept-illustration-with-icons-of-building-construction-urban-landscape-and.jpg?ver=6"

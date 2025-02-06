@@ -30,7 +30,7 @@ export default function UserLists() {
           <table className="table-auto w-full border-collapse border border-gray-300 text-center">
             <thead>
               <tr className="bg-gray-600 text-white text-xl">
-                <th className="px-4 py-2">Date Created</th>
+              
                 <th className="px-4 py-2">User Image</th>
                 <th className="px-4 py-2">User Name</th>
                 <th className="px-4 py-2">Seller / Buyer</th>
@@ -39,9 +39,7 @@ export default function UserLists() {
             <tbody className="divide-y">
               {users.map((user) => (
                 <tr key={user._id} className="bg-white">
-                  <td className="px-4 py-2 text-black text-2xl">
-                    {new Date(user.updatedAt).toLocaleDateString()}
-                  </td>
+                  
                   <td className="px-4 py-2">
                     <Link to={`/detail/${user._id}`}>
                       <img

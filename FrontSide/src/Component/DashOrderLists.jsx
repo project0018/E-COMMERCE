@@ -12,6 +12,10 @@ export default function DashOrderLists() {
   const [selectedBuyerId, setSelectedBuyerId] = useState(null);
   const { currentUser } = useSelector((state) => state.user);
   // Fetch orders for the current seller
+
+  console.log(userOrders);
+  
+
   useEffect(() => {
     const fetchOrders = async () => {
       try {
@@ -228,7 +232,7 @@ export default function DashOrderLists() {
     const product = userProducts.find((prod) => prod._id === order.productId);
     return (
       <div
-        key={order._id}
+        key={order?._id}
         className="shadow-lg rounded-lg p-2 bg-white cursor-pointer hover:shadow-xl hover:scale-105 transition-all duration-300"
         onClick={() => openModal(order)}
       >
@@ -290,7 +294,8 @@ export default function DashOrderLists() {
               <TextInput 
               label="orderd Date"
               type="text"
-              value={new Date(selectedOrder.order?.createdAt).toLocaleDateString()}/>
+              value={new Date(selectedOrder.order.createdAt).toLocaleDateString()}
+              />
               <Label>Delivery Date</Label>
               <TextInput
                 label="Delivery Date"
