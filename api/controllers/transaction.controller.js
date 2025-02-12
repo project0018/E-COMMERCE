@@ -1,20 +1,38 @@
 import Transaction from "../models/transaction.model.js";
 import { errorHandler } from "../utils/error.js";
 
-
 export const createTransaction = async (req, res, next) => {
     try {
         const { userId, sellerId, totalAmount } = req.body;
+
         if (!userId || !sellerId || !totalAmount) {
             return next(errorHandler(403, 'All fields are required'));
         }
+
+        // Check if a transaction already exists for this user and seller
+        const existingTransaction = await Transaction.findOne({ userId, sellerId });
+
+        if (existingTransaction) {
+            return res.status(200).json({
+                success: true,
+                message: "Transaction already exists",
+                transaction: existingTransaction
+            });
+        }
+
+        // Create a new transaction
         const newTransaction = new Transaction({
             userId,
             sellerId,
             totalAmount,
         });
+
         await newTransaction.save();
-        res.status(200).json(newTransaction);
+        res.status(201).json({
+            success: true,
+            message: "Transaction created successfully",
+            transaction: newTransaction
+        });
     } catch (error) {
         next(error);
     }
@@ -23,12 +41,11 @@ export const createTransaction = async (req, res, next) => {
 
 export const getTransactions = async (req, res, next) => {
     try {
-        const { id } = req.params; // Single parameter for dynamic matching
+        const { id } = req.params; 
 
-    // Fetch orders where the id matches either userId or sellerId
-    const transactions = await Transaction.find({
-      $or: [{ userId: id }, { sellerId: id }],
-    });
+        const transactions = await Transaction.find({
+            $or: [{ userId: id }, { sellerId: id }],
+        });
 
         res.status(200).json(transactions);
     } catch (error) {
@@ -36,16 +53,14 @@ export const getTransactions = async (req, res, next) => {
     }
 };
 
-
-
 export const updateTransactions = async (req, res, next) => {
     try {
         const { totalAmount, balanceAmount, paidAmount, date } = req.body;
-        if (!req.user.id || req.user.id!== req.params.sellerId) {
+        
+        if (!req.user.id || req.user.id !== req.params.sellerId) {
             return next(errorHandler(403, "You are not allowed to update this transaction"));
         }
 
-        // Update the transaction fields
         const updatedTransaction = await Transaction.findByIdAndUpdate(
             req.params.transactionId,
             {
@@ -62,7 +77,3 @@ export const updateTransactions = async (req, res, next) => {
         next(error);
     }
 };
-
-
-
-  

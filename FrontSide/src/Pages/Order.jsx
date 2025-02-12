@@ -102,21 +102,23 @@ export default function Order() {
           (product) =>
             product._id === order.productId && product.userId === order.sellerId
         );
-  
+
         if (matchingProduct) {
           const sellerId = order.sellerId;
-  
-          // Check if there's an existing transaction for this seller and user
+
+          // Check if there's an existing transaction for this user and seller combination
           const existingTransaction = transactions.find(
             (transaction) =>
               transaction.sellerId === sellerId &&
               transaction.userId === currentUser._id
           );
-  
+
           if (existingTransaction) {
             console.log("Existing Transaction:", existingTransaction);
+            // Skip creating a new transaction if one exists
+            continue;
           } else {
-            // Create a new transaction
+            // Create a new transaction only if it doesn't exist
             try {
               const res = await fetch("/api/transaction/createtransaction", {
                 method: "POST",
@@ -129,13 +131,14 @@ export default function Order() {
                   totalAmount: matchingProduct.price.toString(), // Use the product's price directly
                 }),
               });
-  
+
               if (res.ok) {
                 const newTransaction = await res.json();
                 setTransactions((prev) => [...prev, newTransaction]);
                 console.log("New transaction created successfully:", newTransaction);
               } else {
-                console.error("Failed to create transaction:", await res.json());
+                const errorData = await res.json();
+                console.error("Failed to create transaction:", errorData);
               }
             } catch (error) {
               console.error("Error creating transaction:", error.message);
@@ -144,14 +147,13 @@ export default function Order() {
         }
       }
     };
-  
+
     // Run transaction logic only if there are new orders or products
     if (userOrders.length > 0 && userProducts.length > 0) {
       checkAndCreateTransaction();
     }
-  }, [userOrders, userProducts, currentUser._id]); // Minimized dependency array
-  
-  
+  }, [userOrders, userProducts, currentUser._id, transactions]);
+
   const openModal = (order) => {
     setSelectedOrder(order);
     setModalOpen(true);
@@ -289,7 +291,7 @@ export default function Order() {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button className="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={closeModal}>Close</Button>
+            <Button className="text-black" onClick={closeModal}>Close</Button>
           </Modal.Footer>
         </Modal>
       )}
