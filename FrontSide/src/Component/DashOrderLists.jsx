@@ -303,11 +303,6 @@ export default function DashOrderLists() {
                     }))
                   }
                 />
-                <Label>Ordered Date:</Label>
-                <TextInput
-                  type="text"
-                  value={new Date(selectedOrder?.order?.createdAt).toLocaleDateString()}
-                />
                 <Label>Delivery Date</Label>
                 <TextInput
                   value={selectedOrder?.order?.date || ""}
