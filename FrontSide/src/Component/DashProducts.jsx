@@ -54,7 +54,6 @@ export default function DashProducts() {
           <table className="w-full border-collapse border border-gray-300">
             <thead className="bg-gray-600 text-white">
               <tr>
-                <th className="p-2 border border-gray-300">Date Updated</th>
                 <th className="p-2 border border-gray-300">Product Image</th>
                 <th className="p-2 border border-gray-300">Product Title</th>
                 <th className="p-2 border border-gray-300">Category</th>
@@ -65,7 +64,6 @@ export default function DashProducts() {
             <tbody>
               {userProducts.map((product) => (
                 <tr key={product._id} className="text-center bg-white hover:bg-gray-100">
-                  <td className="p-2 border border-gray-300">{new Date(product.updatedAt).toLocaleDateString()}</td>
                   <td className="p-2 border border-gray-300">
                     <img
                       src={product.image || 'https://via.placeholder.com/150'}
