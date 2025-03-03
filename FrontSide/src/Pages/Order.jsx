@@ -271,10 +271,6 @@ export default function Order() {
               <p>Quantity: {selectedOrder.order?.quantity}</p>
               <p>Paid Status: {selectedOrder.order?.paidstatus}</p>
               <p>Delivery Status: {selectedOrder.order?.deliverystatus}</p>
-              <p>
-                Ordered Date:{" "}
-                {new Date(selectedOrder.order?.createdAt).toLocaleDateString()}
-              </p>
               <p>Delivery Date: {selectedOrder.order?.date || "N/A"}</p>
               {selectedOrder.transaction && (
                 <>
