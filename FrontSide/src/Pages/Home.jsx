@@ -32,38 +32,11 @@ export default function Home() {
 
       {/* Carousel */}
       <div className="w-full p-5 h-[650px] sm:h-[500px] lg:h-[750px] 2xl:h-[850px] mb-12">
-        <Carousel>
           <img
-            src="https://us.123rf.com/450wm/ideyweb/ideyweb1503/ideyweb150300025/37771784-flat-design-vector-concept-illustration-with-icons-of-building-construction-urban-landscape-and.jpg?ver=6"
-            alt="Slide 1"
+            src="https://th.bing.com/th/id/OIP.U4ePj89i7EMq5l16zY8GXQHaE_?rs=1&pid=ImgDetMain"
+            alt="IMAGE"
             className="w-full h-full object-fill"
           />
-          <img
-            src="https://us.123rf.com/450wm/macrovectorart/macrovectorart2102/macrovectorart210200291/164078802-construction-industry-house-building-stages-elements-flat-design-vector-illustration.jpg?ver=6"
-            alt="Slide 2"
-            className="w-full h-full object-fill"
-          />
-          <img
-            src="https://us.123rf.com/450wm/macrovectorart/macrovectorart2103/macrovectorart210301082/164944398-flat-construction-design-concept-with-hand-holding-magnifier-building-elements-tools-equipment-and.jpg?ver=6"
-            alt="Slide 3"
-            className="w-full h-full object-fill"
-          />
-          <img
-            src="https://us.123rf.com/450wm/macrovector/macrovector1405/macrovector140500294/28133584-logistic-pointing-hand-and-delivery-network-chain-concept-vector-illustration.jpg?ver=6"
-            alt="Slide 4"
-            className="w-full h-full object-fill"
-          />
-          <img
-            src="https://us.123rf.com/450wm/vmaster2012/vmaster20121409/vmaster2012140900039/31424768-delivery-truck-sign-icon-cargo-van-symbol-and-cloud-on-abstract-colorful-watercolor-background-with.jpg?ver=6"
-            alt="Slide 5"
-            className="w-full h-full object-fill"
-          />
-          <img
-            src="https://us.123rf.com/450wm/yupiramos/yupiramos1503/yupiramos150303159/37306550-delivery-design-over-blue-background-vector-illustration.jpg?ver=6"
-            alt="Slide 6"
-            className="w-full h-full object-fill"
-          />
-        </Carousel>
       </div>
 
       {/* Product Grid */}
