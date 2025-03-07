@@ -33,7 +33,7 @@ export default function Home() {
       {/* Carousel */}
       <div className="w-full p-5 h-[650px] sm:h-[500px] lg:h-[750px] 2xl:h-[850px] mb-12">
           <img
-            src="https://th.bing.com/th/id/OIP.U4ePj89i7EMq5l16zY8GXQHaE_?rs=1&pid=ImgDetMain"
+            src="https://builtfront.com/blog/wp-content/uploads/2024/12/construction-supply-chain-management-1300x700.webp"
             alt="IMAGE"
             className="w-full h-full object-fill"
           />
