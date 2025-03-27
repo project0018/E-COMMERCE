@@ -15,6 +15,7 @@ export default function ProductCard({ product }) {
         <div className="p-3 flex flex-col gap-2 h-[30%]">
           <p className="text-xl font-semibold line-clamp-2">{product.title}</p>
           <span className="italic text-lg text-gray-700">{product.category}</span>
+          <span className="italic text-lg text-gray-700">{product.price}</span>
         </div>
       </Link>
     </div>
