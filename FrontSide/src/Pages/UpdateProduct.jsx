@@ -115,10 +115,19 @@ const handleSubmit = async (e) => {
             <option value="stone">Rock Stone</option>
             <option value="sand">Sand</option>
             <option value="steel">Steel</option>
-            <option value="sement">Sement</option>
+            <option value="cement">Cement</option>
             <option value="electrical">Electrical</option>
             <option value="pipe">Pipes</option>
             <option value="paint">Color Paint</option>
+            <option value="bricks">Bricks</option>
+            <option value="tiles">Tiles</option>
+            <option value="kadappa-stone">Kadappa Stone</option>
+            <option value="paint-brush">Paint Brush</option>
+            <option value="paint-secondary-items">Paint - Secondary Item</option>
+            <option value="water-tank">Water Tank</option>
+            <option value="M-Sand">M Sand</option>
+            <option value="construction-supporting-item">Construction - Supporting Item</option>
+            <option value="icon-nails">Iron Nails</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border border-teal-400 border-double p-3">
