@@ -32,7 +32,7 @@ export default function UserLists() {
               <tr className="bg-gray-600 text-white text-xl">
               
                 <th className="px-4 py-2">User Image</th>
-                <th className="px-4 py-2">User Name</th>
+                <th className="px-4 py-2">User Company</th>
                 <th className="px-4 py-2">Seller / Buyer</th>
               </tr>
             </thead>
@@ -51,7 +51,7 @@ export default function UserLists() {
                   </td>
                   <td className="px-4 py-2 text-2xl text-black">
                     <Link to={`/detail/${user._id}`} className="flex items-center justify-center">
-                      {user.username}
+                      {user.companyname}
                     </Link>
                   </td>
                   <td className="px-4 py-2 text-2xl">
