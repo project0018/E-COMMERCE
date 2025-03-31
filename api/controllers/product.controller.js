@@ -52,7 +52,6 @@ export const getproducts = async (req, res, next) => {
         $or: [
           { title: { $regex: req.query.searchTerm, $options: "i" } },
           { companyname: { $regex: req.query.searchTerm, $options: "i" } },
-          { content: { $regex: req.query.searchTerm, $options: "i" } },
         ],
       }),
     })
